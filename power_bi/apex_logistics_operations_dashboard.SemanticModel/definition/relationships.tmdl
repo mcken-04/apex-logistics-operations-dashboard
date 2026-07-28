@@ -1,0 +1,15 @@
+relationship c7107db5-5a50-455a-885d-389d76138542
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public cleaned_logistics_data'.order_date
+	toColumn: LocalDateTable_bc5a9084-493e-4c92-be5a-c63f1a720e26.Date
+
+relationship 777f8031-3365-4015-9fae-6148aa3e599d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public cleaned_logistics_data'.expected_delivery_date
+	toColumn: LocalDateTable_8805e735-e329-4099-aba2-4359b64fef1f.Date
+
+relationship 0dffd286-ed9e-48f9-8a15-41ecb2e05759
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'public cleaned_logistics_data'.actual_delivery_date
+	toColumn: LocalDateTable_eccc2d34-7262-4cf5-a8a3-eb319110ac24.Date
+

@@ -1,0 +1,22 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["public cleaned_logistics_data"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'public cleaned_logistics_data'
+ref table DateTableTemplate_c3466c81-eeec-400d-9fba-60e37106d817
+ref table LocalDateTable_bc5a9084-493e-4c92-be5a-c63f1a720e26
+ref table LocalDateTable_8805e735-e329-4099-aba2-4359b64fef1f
+ref table LocalDateTable_eccc2d34-7262-4cf5-a8a3-eb319110ac24
+
+ref cultureInfo en-US
+
