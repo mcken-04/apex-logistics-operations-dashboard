@@ -7,6 +7,13 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 
 ## Table of Contents
+- [Project Overview](#project-overview)
+- [Key Metrics Tracked (KPIs)](#key-metrics-tracked-kpis)
+- [Executive Dashboard](#executive-dashboard)
+- [Methodology & Tech Stack](#methodology--tech-stacks)
+- [Strategic Reccommendations](#strategic-recommendations)
+- [Repository Structure](#repository-structure)
+- [Next Steps](#next-steps)
 
 ---
 
