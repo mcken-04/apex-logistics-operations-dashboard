@@ -30,3 +30,9 @@ operations managers to monitor and optimize performance.
 **Out-of-Scope:**
   * Real-time data streaing (pipeline is batch-oriented for historical analysis).
   * Direct integration with live IoT sensors or live weather APIs.
+
+## Functional Requiremnts
+### 5.1 Data Engineering & Transformation
+* **Data Standardization:** convert raw date strings to native database `DATE`/`TIMESTAMP` formats.
+* **Null Handling:** Automatically convert empty strings( '' ) int `Damaged_Flag` column to `NULL`, and subsequently default to `Unknown`.
+* 
