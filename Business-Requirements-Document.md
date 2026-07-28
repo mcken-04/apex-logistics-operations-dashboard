@@ -20,3 +20,13 @@ operations managers to monitor and optimize performance.
 | **Fleet Manager** | Package Damage Rate (%) | Determine if specific vehicle types are causing more damage to freight. |
 | **Regional Director** | Total Orders & Average Delays | Compare the performance of different distribution regions (e.g., North vs. South ). |
 
+## 4. Scope of Work
+**In-Scope:**
+  * Ingestion and transformation of 2 years of historical logistics data.
+  * Database schema design and deployment using PostgreSQL.
+  * Data cleaning and anomaly correction (e.g., handling missing values, standardizing dates) via SQL Views.
+  * Development of an interactive Power BI dashboard with KPI scorecards, trend analysis, and categorical breakdown visuals.
+
+**Out-of-Scope:**
+  * Real-time data streaing (pipeline is batch-oriented for historical analysis).
+  * Direct integration with live IoT sensors or live weather APIs.
