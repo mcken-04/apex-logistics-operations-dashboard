@@ -18,6 +18,10 @@
 ---
 
 ## Project Overview
+**APEX Regional Deliveries** is a fictional logistics company facing logistical bottlenecks. Experiencing a recent spike in customer complaints regarding late deliveries and damaged freight. The executive team lacked visibility into the root causes of the operational failures.
+
+This project represents a complete, end to end data engineering and analytics pipeline designed to solve this problem. I generated over 2 years of synethetic shipping data, loaded it into relational database, engineered a tranformation layer to clean anaomalies, and built an interactive dashboard to monitor supply chain health.
+
 > ** View the full formal Business Requirements Document (BRD) [here](Business-Requirements-Document.md)**
 ---
 
