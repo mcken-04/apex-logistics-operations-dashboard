@@ -1,0 +1,233 @@
+table 'public cleaned_logistics_data'
+	lineageTag: a1a8acba-02f0-4ff0-a668-d7e145f115d7
+
+	measure order_id_count = ```
+			
+			    COUNT('public cleaned_logistics_data'[orderid])
+			```
+		formatString: 0
+		lineageTag: 43d39b8c-2092-47f7-95fe-52d9a09f5168
+
+	measure On_Time_Delivery_Rate = ```
+			
+			    VAR Total_Completed_Deliveries =
+			        CALCULATE(
+			            COUNT('public cleaned_logistics_data'[orderid]), 'public cleaned_logistics_data'[delivery_status] = "Delivered"
+			        )
+			    VAR On_Time_Deliveries = 
+			        CALCULATE(
+			            COUNT('public cleaned_logistics_data'[orderid]),
+			            'public cleaned_logistics_data'[is_late] = 0,
+			            'public cleaned_logistics_data'[delivery_status] = "Delivered"
+			        )
+			    RETURN
+			        DIVIDE(On_Time_Deliveries , Total_Completed_Deliveries, 0)
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 8dcb277a-ecc1-4c1a-995e-3826f3d5323f
+
+	measure Damage_Rate = ```
+			
+			    VAR Total_Damged =
+			        CALCULATE(
+			            COUNT('public cleaned_logistics_data'[orderid]),
+			            'public cleaned_logistics_data'[damaged_status] = "Yes"
+			        )
+			    VAR Total_Orders = 
+			        COUNT('public cleaned_logistics_data'[orderid])
+			
+			    RETURN
+			        DIVIDE(Total_Damged, Total_Orders, 0) + 0
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d8e1467a-3ef0-4181-be6f-402417f4cacb
+
+	measure Late_Delivery_Rate = ```
+			
+			    1 - [On_Time_Delivery_Rate]
+			```
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ae5ed389-ad08-422c-8d0c-01726b48a2f0
+
+	column orderid
+		dataType: string
+		lineageTag: 930aa19f-a7a1-405f-8f30-7f31147cf9de
+		summarizeBy: none
+		sourceColumn: orderid
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: ddabd13a-3b23-472b-8c62-a1db47e6d508
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column vehicletype
+		dataType: string
+		lineageTag: f5a39290-16d9-4d82-a816-6b897c7be5bb
+		summarizeBy: none
+		sourceColumn: vehicletype
+
+		annotation SummarizationSetBy = Automatic
+
+	column weathercondition
+		dataType: string
+		lineageTag: a079d14f-95ac-47c7-a38f-90649c63fe00
+		summarizeBy: none
+		sourceColumn: weathercondition
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_miles
+		dataType: int64
+		formatString: 0
+		lineageTag: d8cad9d7-d865-45c0-bf91-900b69f112bc
+		summarizeBy: sum
+		sourceColumn: distance_miles
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation __PBI_SemanticLinks = [{"LinkTarget":{"TableName":"public cleaned_logistics_data","TableItemName":"distance_miles (bins)","ObjectType":4},"LinkType":"UsedInGroup"}]
+
+	column order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3417922c-f33d-4448-b081-8925287358fa
+		summarizeBy: none
+		sourceColumn: order_date
+
+		variation Variation
+			isDefault
+			relationship: c7107db5-5a50-455a-885d-389d76138542
+			defaultHierarchy: LocalDateTable_bc5a9084-493e-4c92-be5a-c63f1a720e26.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column expected_delivery_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7e2071a7-2f05-4e93-a3c7-1073f83fcf7a
+		summarizeBy: none
+		sourceColumn: expected_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: 777f8031-3365-4015-9fae-6148aa3e599d
+			defaultHierarchy: LocalDateTable_8805e735-e329-4099-aba2-4359b64fef1f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column actual_delivery_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 9d43c36f-abba-448c-ab5d-2ecacfc1ba62
+		summarizeBy: none
+		sourceColumn: actual_delivery_date
+
+		variation Variation
+			isDefault
+			relationship: 0dffd286-ed9e-48f9-8a15-41ecb2e05759
+			defaultHierarchy: LocalDateTable_eccc2d34-7262-4cf5-a8a3-eb319110ac24.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column damaged_status
+		dataType: string
+		lineageTag: ba6b4ad2-b2bd-47c4-a5be-fdc5f2ba9525
+		summarizeBy: count
+		sourceColumn: damaged_status
+
+		annotation SummarizationSetBy = User
+
+	column days_to_deliver
+		dataType: double
+		formatString: 0.0
+		lineageTag: 8ccee1b4-76ca-48cf-805a-dac6c04bb938
+		summarizeBy: average
+		sourceColumn: days_to_deliver
+
+		annotation SummarizationSetBy = User
+
+	column is_late
+		dataType: int64
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 20b4ac55-eefc-4ab2-8c96-701ca477df76
+		summarizeBy: sum
+		sourceColumn: is_late
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_delayed
+		dataType: double
+		formatString: 0
+		lineageTag: e7bb8837-0a64-40d5-b638-a393c11b8161
+		summarizeBy: sum
+		sourceColumn: days_delayed
+
+		annotation SummarizationSetBy = Automatic
+
+	column delivery_status
+		dataType: string
+		lineageTag: 9782bb19-82b7-4a7e-b986-e5939b2d7817
+		summarizeBy: none
+		sourceColumn: delivery_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'distance_miles (bins)' =
+			IF(
+				ISBLANK('public cleaned_logistics_data'[distance_miles]),
+				BLANK(),
+				INT('public cleaned_logistics_data'[distance_miles] / 100) * 100
+			)
+		formatString: 0
+		lineageTag: 59caef5f-b8fc-4faa-9cd2-5a2ab5b1d656
+		summarizeBy: none
+
+		extendedProperty GroupingMetadata =
+				{
+				  "version": 0,
+				  "groupedColumns": [
+				    {
+				      "Column": {
+				        "Expression": {
+				          "SourceRef": {
+				            "Entity": "public cleaned_logistics_data"
+				          }
+				        },
+				        "Property": "distance_miles"
+				      }
+				    }
+				  ],
+				  "binningMetadata": {
+				    "binSize": {
+				      "value": 100.0,
+				      "unit": 0
+				    }
+				  }
+				}
+
+		annotation GroupingDesignState = {"Version":0,"Sources":[{"Name":"p","Entity":"public cleaned_logistics_data"}],"GroupedColumns":[{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"distance_miles"}}],"BinItem":{"Expression":{"Floor":{"Expression":{"Column":{"Expression":{"SourceRef":{"Source":"p"}},"Property":"distance_miles"}},"Size":100.0}}}}
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'public cleaned_logistics_data' = m
+		mode: import
+		source =
+				let
+				    Source = PostgreSQL.Database("localhost", "postgres"),
+				    public_cleaned_logistics_data = Source{[Schema="public",Item="cleaned_logistics_data"]}[Data]
+				in
+				    public_cleaned_logistics_data
+
+	annotation PBI_ResultType = Table
+
