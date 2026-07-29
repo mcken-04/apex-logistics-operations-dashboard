@@ -1,3 +1,5 @@
+<img src="assets/APEX_logo.png" alt="APEX logo" width="125" height="75">
+
 # Business Requirements Document (BRD)
 **Company:** APEX Regional Deliveries
 **Project:** End-to-End Data Pipeline & Logistics Analysis
