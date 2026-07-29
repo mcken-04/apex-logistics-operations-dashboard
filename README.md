@@ -18,7 +18,7 @@
 ---
 
 ## Project Overview
-
+> ** View the full formal Business Requirements Document (BRD) [here](Business-Requirements-Document.md)**
 ---
 
 ## Key Metrics Tracked (KPIs)
