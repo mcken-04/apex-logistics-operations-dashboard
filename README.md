@@ -20,7 +20,7 @@
 ## Executive Summary
 **APEX Regional Deliveries** is a fictional logistics company facing logistical bottlenecks. Experiencing a recent spike in customer complaints regarding late deliveries and damaged freight. The executive team lacked visibility into the root causes of the operational failures.
 
-This project represents a complete, end to end data engineering and analytics pipeline designed to solve this problem. I generated over 2 years of synethetic shipping data, loaded it into relational database, engineered a transformation layer to clean anomalies, and built an interactive dashboard to monitor supply chain health.
+This project represents a complete, end to end data engineering and analytics pipeline designed to solve this problem. I generated over 2 years of synesthetic shipping data, loaded it into relational database, engineered a transformation layer to clean anomalies, and built an interactive dashboard to monitor supply chain health.
 
 > ** View the full formal Business Requirements Document (BRD) [here](Business-Requirements-Document.md)**
 ---
@@ -72,6 +72,28 @@ Based on the data insights, I reccomend the following operational changes for AP
 ## Repository Structure
 ```text
 |
+├──  assets/
+|    ├── APEX_logo.png                                        # Company Logo
+|    └── logistics_operations_dashboard.png                   # APEX Logistic Network - Operations Overview image
+├──  data/
+|    ├── apex_logistic_raw.csv                                # Generated raw dataset
+|    └── cleaned_logistics_data.csv                           # Generated cleaned dataset
+├──  power_bi
+|    ├── apex_logsitics_operations_dashboard.Report/          # PBIP Report definition
+|    ├── apex_logistics_operations_dashboard.SemanticModel/   # PBIP Data Model
+|    ├── apex_logistics_operations_dashboard.pbip             # Power BI Project File
+|    └── apex_logistics_operations_dashboard.pbix             # Standard Power BI file
+├──  py_scripts
+|    ├── 01_data_generator.ipynb                              # Jupyter Notebook data generation
+|    ├── 01_data_generation.py                                # Executable Python script
+|    ├── 02_explore_apex_data.ipynb                           # Jupyter Notebook data exploration
+|    └── 02_explore_apex_data.py                              # Executable Python script
+├──  sql_scripts
+|    ├── 03_create_raw_tables.sql                             # DDL for Postgres tables
+|    ├── 04_exploritory_analysis.sql                          # EDA within raw data
+|    └── 05_clean_and_transform.sql                           # DML for Tables and Views
+├──  Business-Requirements-Document.md                        # Business Problem and Requirements for analysis
+└──  README.md
 ---
 
 ## Next Steps
