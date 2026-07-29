@@ -2,12 +2,11 @@
 
 # Business Requirements Document (BRD)
 **Company:** APEX Regional Deliveries
+
 **Project:** End-to-End Data Pipeline & Logistics Analysis
 
 ## 1. Executive Summary
-APEX Regional Deliveries has experienced a noticeable spike in customer complaints regarding late deliveries and damaged freight over the past two years. Currently the executive team lacks visibility into the root causes of
-these of these operational bottlenecks. This project aims to design and implement an end-to-end data pipeline and business intelligence dashboard to identify the primary drivers of delayed and damaged shipments, empowering
-operations managers to monitor and optimize performance.
+APEX Regional Deliveries has experienced a noticeable spike in customer complaints regarding late deliveries and damaged freight over the past two years. Currently the executive team lacks visibility into the root causes of these of these operational bottlenecks. This project aims to design and implement an end-to-end data pipeline and business intelligence dashboard to identify the primary drivers of delayed and damaged shipments, empowering operations managers to monitor and optimize performance.
 
 ## 2. Business Objectives
 * **Identify Bottlenecks:** Pinpoint where and why shipping delays are occurring across the network.
