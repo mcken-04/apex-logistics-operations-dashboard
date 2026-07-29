@@ -62,11 +62,16 @@ The following primary KPIs were engineered with DAX to monitor supply chain heal
 ---
 
 ## Strategic Recommendations
-
+Based on the data insights, I reccomend the following operational changes for APEX Regional Deliveries:
+* **Fleet Audit:** Initiate an immediate audit of all Vans. Investigating whether the 50% damage rate is due to vehicle suspension issues, lack of secure strapping devices, or specific driver handling protocols.
+* **Weather Routing Adjustments:** Since distance doesn't impact delay rates at thought, rerouting or planning drivers around localized heavy rain, snow, or fog occurrences even if it adds milage to the delivery route.
+* **East Region Delivery Review:** Place the East Region management on a Performance Improvement Plan and pair them with the South Region Directors to share its best logistical practices.
+* **West Region Damage Review:** Invest in driver and packaging training to help fight a rising damage rate in product handling.
 ---
 
 ## Repository Structure
-
+```text
+|
 ---
 
 ## Next Steps
