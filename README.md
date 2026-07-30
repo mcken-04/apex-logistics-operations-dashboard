@@ -11,7 +11,7 @@
 - [Methodology & Tech Stack](#methodology--tech-stacks)
 - [Key Metrics Tracked (KPIs)](#key-metrics-tracked-kpis)
 - [Executive Dashboard](#executive-dashboard)
-- [Dashboard Features and Key Business Insights](#dashboard-features-and-key-business-insights)
+- [Dashboard Features & Key Business Insights](#dashboard-features-&-key-business-insights)
 - [Strategic Reccommendations](#strategic-recommendations)
 - [Repository Structure](#repository-structure)
 - [Future Enhancements](#future-enhancements)
