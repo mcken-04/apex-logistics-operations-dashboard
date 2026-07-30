@@ -12,7 +12,7 @@
 - [Key Metrics Tracked (KPIs)](#key-metrics-tracked-kpis)
 - [Executive Dashboard](#executive-dashboard)
 - [Dashboard Features & Key Business Insights](#dashboard-features--key-business-insights)
-- [Strategic Reccommendations](#strategic-recommendations)
+- [Strategic Recommendations](#strategic-recommendations)
 - [Repository Structure](#repository-structure)
 - [Future Enhancements](#future-enhancements)
 
@@ -34,7 +34,7 @@ This project uses a full Extract, Transform, Load (ETL) and Visualization workfl
     - "Non-Existent" *NULLS* were a key finding in our search through the data. Instead of creating NULL values as advised, the data generation tool instead created empty stings.
 * **Data Transformation and Anomaly Handling (SQL):** Created a SQL Views to standardize data types, calculate delivery intervals, and apply conditional logic.
       - I implemented a data quality rule using `CASE WHEN` statement to detect and efficiently correct seasonal anomalies (e.g., transforming impossible "Summer Snowstorms" into "Heavy Rain").
-* **Business Intelligence (Power BI):** Connected directly tothe PostgreSQL database to develop an interactive scorecard utilizing sutom DAX measures and exception reporting filters.
+* **Business Intelligence (Power BI):** Connected directly to the PostgreSQL database to develop an interactive scorecard utilizing custom DAX measures and exception reporting filters.
 
 ---
 
