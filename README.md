@@ -97,7 +97,7 @@ Based on the data insights, I recommend the following operational changes for AP
 ---
 ```
 
-## Future Enhancments
+## Future Enhancements
 While this investigative analysis successfully identified core operational bottlenecks, I plan to improve this project in these meaningful ways:
 * **Live Weather Updates:** Integrate a live weather API with Python to replace synthetic weather generation.
 * **Predictive Forecast:** Implement a predictive Machine Learning model with Python to forecast the probability being delayed based on Route and Vehicle Type.
